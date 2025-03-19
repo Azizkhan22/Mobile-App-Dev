@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mad/lab%203/aziz.dart';
+import 'package:mad/lab%204/task3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,9 +9,10 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
-  @override 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Lab 3',
       theme: ThemeData(
         // This is the theme of your application.
@@ -31,7 +32,9 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
       ),
-      home: const Design(),
+      home: ScrollableListView(
+        items: List.generate(20, (index) => "Item ${index + 1}"),
+      ),
     );
   }
 }
