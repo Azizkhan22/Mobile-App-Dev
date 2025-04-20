@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mad/lab%205/task3.dart';
+import 'package:mad/lab%206/task3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
       ),
-      home: FirstScreen()
+      home: DashboardScreen()
     );
   }
 }
