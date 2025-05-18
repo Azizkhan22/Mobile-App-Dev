@@ -1,23 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:mad/lab%207/task2.dart';
+import './lab 10/app.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'firebase_options.dart'; // Import the generated file
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Lab 7',
-      theme: ThemeData(      
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-      ),
-      home: PostView()
-    );
-  }
+  await Firebase.initializeApp(
+    options:
+        DefaultFirebaseOptions
+            .currentPlatform, // picks the right config for web, android, ios
+  );
+
+  runApp(MyApp());
 }
